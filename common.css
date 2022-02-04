@@ -84,6 +84,11 @@ main {
 	box-shadow: 2px 2px 0px 2px #242424;
 }
 
+a:hover .card {
+	background-color: #444444;
+	box-shadow: 2px 2px 0px 2px #343434;
+}
+
 .card-title {
 	text-align: center;
 }
