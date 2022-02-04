@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	min-height: 95vh;
 	position: relative;
@@ -8,11 +12,26 @@ body {
 }
 
 header {
-	text-align: center;
 	background-color: #ab25a0;
 	box-shadow: 0px 0px 15px black;
 	border-bottom-left-radius: 15%;
 	border-bottom-right-radius: 15%;
+}
+
+a#skip-nav, a#credits {
+	position: absolute;
+	text-align: center;
+	background-color: #792182;
+	left: 0.5rem;
+	padding: 20px 0 20px 0;
+	width: 10vw;
+	border-radius: 0 0 0.25rem 0.25rem;
+	transform: translateY(-120%);
+	transition: transform 250ms ease-in;
+}
+
+a#skip-nav:focus, a#credits:focus {
+	transform: translateY(0);
 }
 
 a {
@@ -24,6 +43,16 @@ nav > ul {
 	list-style-type: none;
 	display: flex;
 	justify-content: center;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#socials > ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: right;
+	text-align: center;
 	margin: 0;
 	padding: 0;
 }
@@ -31,9 +60,10 @@ nav > ul {
 .nav-item {
 	padding: 30px 0 30px 0;
 	width: 10vw;
+	transition: background-color 150ms ease-in;
 }
 
-a:hover > .nav-item {
+a:hover > .nav-item, a:focus > .nav-item {
 	background-color: #792182;
 }
 
@@ -82,9 +112,14 @@ main {
 	background-color: #343434;
 	border-radius: 25px;
 	box-shadow: 2px 2px 0px 2px #242424;
+	transition: background-color 150ms ease-in;
 }
 
-a:hover .card {
+.card > img {
+	border-radius: 0.5rem;
+}
+
+a:focus .card, a:hover .card {
 	background-color: #444444;
 	box-shadow: 2px 2px 0px 2px #343434;
 }
@@ -122,7 +157,6 @@ footer {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 30px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	background-color: #434343;
@@ -131,6 +165,21 @@ footer {
 	border-top-right-radius: 15%;
 }
 
+#copyright {
+	padding: 30px;
+}
+
 #socials {
 	text-align: right;
+	margin-right: 7vw;
+}
+
+.social-item {
+	padding: 30px 0 30px 0;
+	width: 6vw;
+	transition: background-color 150ms ease-in;
+}
+
+a:hover > .social-item, a:focus > .social-item {
+	background-color: #343434;
 }
