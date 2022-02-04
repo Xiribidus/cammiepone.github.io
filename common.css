@@ -11,6 +11,8 @@ header {
 	text-align: center;
 	background-color: #ab25a0;
 	box-shadow: 0px 0px 15px black;
+	border-bottom-left-radius: 15%;
+	border-bottom-right-radius: 15%;
 }
 
 a {
@@ -120,6 +122,8 @@ footer {
 	grid-template-columns: 1fr 1fr;
 	background-color: #434343;
 	box-shadow: 0px 0px 15px black;
+	border-top-left-radius: 15%;
+	border-top-right-radius: 15%;
 }
 
 #socials {
