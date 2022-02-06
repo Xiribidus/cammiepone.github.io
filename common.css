@@ -23,6 +23,8 @@ header {
 	box-shadow: 0px 0px 15px black;
 	border-radius: 0 0 2rem 2rem;
 	height: var(--header-height);
+	position: sticky;
+	top: 0;
 }
 
 nav {
@@ -84,11 +86,9 @@ li#current {
 
 main {
 	margin-bottom: auto;
-	margin-left: 50px;
-	margin-right: 50px;
 	min-height: calc(100% - var(--footer-height) - var(--header-height));
 	/*top, left, bottom, right*/
-	padding: 20px 0 25px 0;
+	padding: 20px 0 20px 0;
 }
 
 #page-intro {
@@ -106,31 +106,33 @@ main {
 	margin-top: 0;
 }
 
-#index-cards {
-	text-align: center;
-	color: white;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 20px;
-}
-
 #cards {
 	text-align: justify;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 20px;
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	margin-left: 50px;
+	margin-right: 50px;
 }
 
-#index-cards > a:focus, #cards > a:focus {
+#cards > a:focus {
 	border-radius: 1.5rem;
 }
 
 .card {
-	padding: 20px;
+	padding: 1rem;
+	margin: 0.5rem;
+	max-width: 300px;
 	background-color: #343434;
 	border-radius: 1.5rem;
 	box-shadow: 2px 2px 0px 2px #242424;
 	transition: background-color 150ms ease-in;
+}
+
+.index {
+	max-width: 400px;
 }
 
 .card > img {
@@ -148,8 +150,7 @@ a:focus .card, a:hover .card {
 
 .post {
 	padding: 50px;
-	margin-left: 25%;
-	margin-right: 25%;
+	margin: 0 10rem;
 	background-color: #343434;
 	border-radius: 1.5rem;
 	box-shadow: 2px 2px 0px 2px #242424;
@@ -158,8 +159,7 @@ a:focus .card, a:hover .card {
 #about-me {
 	text-align: justify;
 	padding: 50px;
-	margin-left: 25%;
-	margin-right: 25%;
+	margin: 0 10rem;
 	background-color: #343434;
 	border-radius: 1.5rem;
 	box-shadow: 2px 2px 0px 2px #242424;
