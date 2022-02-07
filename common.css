@@ -220,6 +220,16 @@ a:hover > .social-item, a:focus > .social-item {
 	background-color: #343434;
 }
 
+@media (max-width: 1000px) {
+	#grid-cards {
+		text-align: justify;
+		color: white;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		margin: 0 50px;
+	}
+}
+
 @media (max-width: 800px) {
 	.nav-item {
 		height: 100%;
