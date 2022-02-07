@@ -91,6 +91,11 @@ main {
 	padding: 20px 0 20px 0;
 }
 
+img {
+	width: 100%;
+	height: auto;
+}
+
 #page-intro {
 	height: max-content;
 	text-align: center;
@@ -213,4 +218,78 @@ footer {
 
 a:hover > .social-item, a:focus > .social-item {
 	background-color: #343434;
+}
+
+@media (max-width: 800px) {
+	.nav-item {
+		height: 100%;
+		width: 4.5rem;
+		margin: auto;
+		transition: background-color 150ms ease-in;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	#page-intro {
+		height: max-content;
+		text-align: center;
+		background-color: #343434;
+		border-radius: 1.5rem;
+		box-shadow: 2px 2px 0px 2px #242424;
+		padding: 20px 20px 5px 20px;
+		width: 80%;
+		margin: 0 auto 20px auto;
+	}
+
+	.post {
+		padding: 50px;
+		margin: 0 1rem;
+		background-color: #343434;
+		border-radius: 1.5rem;
+		box-shadow: 2px 2px 0px 2px #242424;
+	}
+
+	#about-me {
+		text-align: justify;
+		padding: 50px;
+		margin: 0 1rem;
+		background-color: #343434;
+		border-radius: 1.5rem;
+		box-shadow: 2px 2px 0px 2px #242424;
+	}
+
+	#grid-cards {
+		text-align: justify;
+		color: white;
+		display: grid;
+		grid-template-columns: 1fr;
+		margin: 0 50px;
+	}
+
+	#copyright {
+		display: none;
+	}
+
+	#socials {
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		margin: auto;
+		margin-right: 1.5rem;
+		height: 100%;
+	}
+
+	.social-item {
+		width: 3rem;
+		height: 100%;
+		margin: auto;
+		transition: background-color 150ms ease-in;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
