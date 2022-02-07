@@ -131,15 +131,10 @@ main {
 .card {
 	padding: 1rem;
 	margin: 0.5rem;
-	max-width: 300px;
 	background-color: #343434;
 	border-radius: 1.5rem;
 	box-shadow: 2px 2px 0px 2px #242424;
 	transition: background-color 150ms ease-in;
-}
-
-.index {
-	max-width: 400px;
 }
 
 .card > img {
