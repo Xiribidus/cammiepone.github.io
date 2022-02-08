@@ -251,6 +251,11 @@ a:hover > .social-item, a:focus > .social-item {
 		width: 80%;
 	}
 
+	img {
+		width: 100%;
+		height: auto;
+	}
+
 	.post {
 		margin: 0 1rem;
 	}
