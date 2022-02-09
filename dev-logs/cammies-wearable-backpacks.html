@@ -2,13 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="description" content="Cammie's Corner Portfolio">
+		<meta name="description" content="Cammie&apos;s Corner Portfolio">
 		<meta name="keywords" content="Minecraft, Modding, Game, Development">
 		<meta name="author" content="Cammie">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Facebook Meta Tags -->
-		<meta property="og:url" content="https://cammiescorner.dev/dev_logs">
+		<meta property="og:url" content="https://cammiescorner.dev/dev-logs/.template">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="Welcome to Cammie's Corner!">
 		<meta property="og:description" content="My name's Cammie, and this is my portfolio and blog!">
@@ -17,42 +17,44 @@
 		<!-- Twitter Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:domain" content="cammiescorner.dev">
-		<meta property="twitter:url" content="https://cammiescorner.dev/dev_logs">
+		<meta property="twitter:url" content="https://cammiescorner.dev/dev-logs/.template">
 		<meta name="twitter:title" content="Welcome to Cammie's Corner!">
 		<meta name="twitter:description" content="My name's Cammie, and this is my portfolio and blog!">
 		<meta name="twitter:image" content="https://cammiescorner.dev/images/about_me.webp">
 
-		<title>Cammie's Corner | Dev Logs</title>
-		<link rel="stylesheet" href="./common.css">
-		<link rel="icon" href="./favicon.ico">
+		<title>Cammie's Corner | You Should Not See This</title>
+		<link rel="stylesheet" href="../common.css">
+		<link rel="icon" href="../favicon.ico">
 	</head>
 	<body>
 		<header>
 			<nav>
 				<a href="#main-content" id="skip-nav">Skip Navigation</a>
-				<a href="./credits.html" id="credits">Credits</a>
+				<a href="../credits.html" id="credits">Credits</a>
 
 				<ul>
 					<li>
-						<a href="./index.html">
+						<a href="../index.html">
 							<div class="nav-item header-left">Home</div>
 						</a>
 					</li>
 					<li id="current">
-						<div class="nav-item">Dev Logs</div>
+						<a href="../dev_logs.html">
+							<div class="nav-item">Dev Logs</div>
+						</a>
 					</li>
 					<li>
-						<a href="./projects.html">
+						<a href="../projects.html">
 							<div class="nav-item">Projects</div>
 						</a>
 					</li>
 					<li>
-						<a href="./blog_posts.html">
+						<a href="../blog_posts.html">
 							<div class="nav-item">Blog Posts</div>
 						</a>
 					</li>
 					<li>
-						<a href=./about_me.html>
+						<a href=../about_me.html>
 							<div class="nav-item header-right">About Me</div>
 						</a>
 					</li>
@@ -61,36 +63,21 @@
 		</header>
 		
 		<main id="main-content">
-			<div id="page-intro">
-				<h1><u>Dev Logs</u></h1>
-				<p>
-					Welcome to the Development Logs! Here I'll be logging my progress<br>
-					on different projects whenever I feel like it.
-				</p>
-			</div>
-
-			<div id="grid-cards">
-				<a href="./dev-logs/website.html">
-					<div class="card">
-						<h2 class="card-title">Website</h2>
-						
-						<b>Last Updated: 04 Feb 2022</b><hr>
-						This is the on-going dev log as I work on this very website!
-						<br><br>
-						I missed out on logging the very early development, but I'm starting it now!
-					</div>
-				</a>
-
-				<a href="./dev-logs/cammies-wearable-backpacks.html">
-					<div class="card">
-						<h2 class="card-title">Cammie's Wearable Backpacks</h2>
-						
-						<b>Last Updated: 09 Feb 2022</b><hr>
-						Dev log for Cammie's Wearable Backpacks, a backpack mod by yours truly.
-						<br><br>
-						I never logged its early development, as I never had a place to, but now I do!
-					</div>
-				</a>
+			<div class="post">
+				<h2><u>Cammie's Wearable Backpacks</u></h2><br>
+				<b>09 Feb 2022</b>
+				<hr><br>
+				This will be a short log, but I was made aware of a funny bug in my backpack mod today.
+				<br><br>
+				Apparently if someone else wore a pride pack, everyone else's backpack's texture would swap out to that of the pride pack's (as seen below).
+				<br><br>
+				<img src="../images/dev-logs/cammies-wearable-backpacks-1.webp" alt="Trans pride backpack next to purple backpack with the trans texture applied" width="100%">
+				<br><br>
+				Of course, as much as I find it funny and enjoy it, it is a bug and as a result, needs to be fixed. It was due to the texture variable being static, and therefore was applied effectively universally to every player.
+				<br><br>
+				As I said, this'll be a short one, as it's now fixed and backpacks look like they should.
+				<br><br>
+				<img src="../images/dev-logs/cammies-wearable-backpacks-2.webp" alt="Trans pride backpack and solid purple backpack next to each other" width="100%">
 			</div>
 		</main>
 
