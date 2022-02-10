@@ -250,6 +250,10 @@ a:hover > .social-item, a:focus > .social-item {
 }
 
 @media (max-width: 800px) {
+	header {
+		font-size: 75%;
+	}
+
 	.nav-item {
 		width: 20vw;
 	}
@@ -281,6 +285,10 @@ a:hover > .social-item, a:focus > .social-item {
 
 	#grid-cards {
 		grid-template-columns: 1fr;
+	}
+
+	footer {
+		font-size: 75%;
 	}
 
 	#copyright {
