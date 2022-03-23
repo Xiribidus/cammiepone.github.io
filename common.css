@@ -27,8 +27,9 @@ body {
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
-	background-image: url("./images/background.svg");
-	background-position: center;
+	background-image: url("./images/background.webp");
+	background-position-x: center;
+	background-position-y: var(--header-height);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
