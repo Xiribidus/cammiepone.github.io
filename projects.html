@@ -61,6 +61,15 @@
 		</header>
 		
 		<main id="main-content">
+			<div id="dropdown">
+				<button id="dropdown-button" onclick="dropdown()">CurseForge</button>
+				<div id="dropdown-links">
+					<button id="curseforge" onclick="curseforge()" hidden>CurseForge</button>
+					<button id="modrinth" onclick="modrinth()" hidden>Modrinth</button>
+					<button id="github" onclick="github()" hidden>GitHub</button>
+				</div>
+			</div>
+			
 			<div id="page-intro">
 				<h1><u>Projects</u></h1>
 				<p>
@@ -70,55 +79,61 @@
 			</div>
 
 			<div id="flex-cards">
-				<a href="https://www.curseforge.com/minecraft/mc-mods/arcanus" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/arcanus" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>Arcanus</u></h2>
 						<img src="./images/projects/arcanus.webp" alt="Arcanus icon" width="300">
 					</div>
 				</a>
-				<a href="https://www.curseforge.com/minecraft/mc-mods/cammies-minecart-tweaks" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/cammies-minecart-tweaks" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>Cammie's Minecart Tweaks</u></h2>
 						<img src="./images/projects/minecarts.webp" alt="Cammie's Minecart Tweaks icon" width="300">
 					</div>
 				</a>
-				<a href="https://www.curseforge.com/minecraft/mc-mods/hookshot" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/hookshot" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>Hookshot</u></h2>
 						<img src="./images/projects/hookshot.webp" alt="Hookshot icon" width="300">
 					</div>
 				</a>
-				<a href="https://www.curseforge.com/minecraft/mc-mods/cammies-combat-tweaks" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/cammies-combat-tweaks" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>Cammie's Combat Tweaks</u></h2>
 						<img src="./images/projects/combattweaks.webp" alt="Cammie's Combat Tweaks icon" width="300">
 					</div>
 				</a>
-				<a href="https://www.curseforge.com/minecraft/mc-mods/icarus" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/icarus" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>Icarus</u></h2>
 						<img src="./images/projects/icarus.webp" alt="Icarus icon" width="300">
 					</div>
 				</a>
-				<a href="https://www.curseforge.com/minecraft/mc-mods/firework-frenzy" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/firework-frenzy" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>Firework Frenzy</u></h2>
 						<img src="./images/projects/fireworkfrenzy.webp" alt="Firework Frenzy icon" width="300">
 					</div>
 				</a>
-				<a href="https://www.curseforge.com/minecraft/mc-mods/cammies-wearable-backpacks" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/cammies-wearable-backpacks" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>Cam's Wearable Backpacks</u></h2>
 						<img src="./images/projects/backpacks.webp" alt="Cammie's Wearable Backpacks icon" width="300">
 					</div>
 				</a>
-				<a href="https://www.curseforge.com/minecraft/mc-mods/vehiclefix" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/the-box-trot" target="_blank" rel="noopener noreferrer">
+					<div class="card">
+						<h2 class="card-title"><u>The Box Trot</u></h2>
+						<img src="./images/projects/the-box-trot.webp" alt="The Box Trot icon" width="300">
+					</div>
+				</a>
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/vehiclefix" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>VehicleFix</u></h2>
 						<img src="./images/projects/vehiclefix.gif" alt="VehicleFix icon" width="300">
 					</div>
 				</a>
-				<a href="https://www.curseforge.com/minecraft/mc-mods/yeet-the-tall-grass" target="_blank" rel="noopener noreferrer">
+				<a class="card-links" href="https://www.curseforge.com/minecraft/mc-mods/yeet-the-tall-grass" target="_blank" rel="noopener noreferrer">
 					<div class="card">
 						<h2 class="card-title"><u>Yeet The Tall Grass!</u></h2>
 						<img src="./images/projects/yeettallgrass.webp" alt="Yeet The Tall Grass! icon" width="300">
@@ -159,5 +174,120 @@
 				</li>
 			</ul>
 		</footer>
+
+		<script>
+			var links = document.getElementsByClassName("card-links");
+			var dropdownButton = document.getElementById("dropdown-button");
+
+			function dropdown() {
+				document.getElementById("curseforge").toggleAttribute("hidden");
+				document.getElementById("modrinth").toggleAttribute("hidden");
+				document.getElementById("github").toggleAttribute("hidden");
+				
+				if(!dropdownButton.classList.contains("toggled"))
+					dropdownButton.classList.add("toggled");
+				else
+					dropdownButton.classList.remove("toggled");
+			}
+
+			function curseforge() {
+				dropdownButton.textContent = "CurseForge";
+				dropdownButton.classList.remove("toggled");
+
+				for(var i = 0; i < links.length; i++) {
+					var link = links[i].href;
+
+					if(link.href.includes("arcanus"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/arcanus";
+					if(link.href.includes("cammies-minecart-tweaks"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/cammies-minecart-tweaks";
+					if(link.href.includes("hookshot"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/hookshot";
+					if(link.href.includes("cammies-combat-tweaks"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/cammies-combat-tweaks";
+					if(link.href.includes("icarus"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/icarus";
+					if(link.href.includes("firework-frenzy"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/firework-frenzy";
+					if(link.href.includes("cammies-wearable-backpacks"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/cammies-wearable-backpacks";
+					if(link.href.includes("the-box-trot"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/the-box-trot";
+					if(link.href.includes("vehicle-fix"))
+						link.href = "https://www.curseforge.com/minecraft/mc-mods/vehiclefix";
+				}
+			}
+
+			function modrinth() {
+				dropdownButton.textContent = "Modrinth";
+				dropdownButton.classList.remove("toggled");
+
+				for(var i = 0; i < links.length; i++) {
+					var link = links[i];
+
+					if(link.href.includes("arcanus"))
+						link.href = "https://modrinth.com/mod/arcanus";
+					if(link.href.includes("cammies-minecart-tweaks"))
+						link.href = "https://modrinth.com/mod/cammies-minecart-tweaks";
+					if(link.href.includes("hookshot"))
+						link.href = "https://modrinth.com/mod/hookshot";
+					if(link.href.includes("cammies-combat-tweaks"))
+						link.href = "https://modrinth.com/mod/cammies-combat-tweaks";
+					if(link.href.includes("icarus"))
+						link.href = "https://modrinth.com/mod/icarus";
+					if(link.href.includes("firework-frenzy"))
+						link.href = "https://modrinth.com/mod/firework-frenzy";
+					if(link.href.includes("cammies-wearable-backpacks"))
+						link.href = "https://modrinth.com/mod/cammies-wearable-backpacks";
+					if(link.href.includes("the-box-trot"))
+						link.href = "https://modrinth.com/mod/the-box-trot";
+				}
+			}
+
+			function github() {
+				dropdownButton.textContent = "GitHub";
+				dropdownButton.classList.remove("toggled");
+
+				for(var i = 0; i < links.length; i++) {
+					var link = links[i];
+
+					if(link.href.includes("arcanus"))
+						link.href = "https://github.com/CammiePone/arcanus";
+					if(link.href.includes("cammies-minecart-tweaks"))
+						link.href = "https://github.com/CammiePone/cammies-minecart-tweaks";
+					if(link.href.includes("hookshot"))
+						link.href = "https://github.com/CammiePone/hookshot";
+					if(link.href.includes("cammies-combat-tweaks"))
+						link.href = "https://github.com/CammiePone/cammies-combat-tweaks";
+					if(link.href.includes("icarus"))
+						link.href = "https://github.com/CammiePone/icarus";
+					if(link.href.includes("firework-frenzy"))
+						link.href = "https://github.com/CammiePone/fireworkfix";
+					if(link.href.includes("cammies-wearable-backpacks"))
+						link.href = "https://github.com/CammiePone/cammies-wearable-backpacks";
+					if(link.href.includes("the-box-trot"))
+						link.href = "https://github.com/CammiePone/the-box-trot";
+					if(link.href.includes("vehiclefix"))
+						link.href = "https://github.com/CammiePone/vehiclefix";
+				}
+			}
+
+			window.onclick = function(event) {
+				if(!event.target.matches("#dropdown-button")) {
+					var curseforge = document.getElementById("curseforge");
+					var modrinth = document.getElementById("modrinth");
+					var github = document.getElementById("github");
+
+					if(!curseforge.hidden)
+						curseforge.toggleAttribute("hidden");
+					if(!modrinth.hidden)
+						modrinth.toggleAttribute("hidden");
+					if(!github.hidden)
+						github.toggleAttribute("hidden");
+					
+					dropdownButton.classList.remove("toggled");
+				}
+			}
+		</script>
 	</body>
 </html>

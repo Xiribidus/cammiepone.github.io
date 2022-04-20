@@ -29,7 +29,6 @@ body {
 	min-height: 100vh;
 	background-image: url("./images/background.webp");
 	background-position-x: center;
-	background-position-y: var(--header-height);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -41,12 +40,15 @@ header {
 	box-shadow: 0px 0px 15px black;
 	border-radius: 0 0 2rem 2rem;
 	height: var(--header-height);
-	position: sticky;
 	top: 0;
 }
 
 nav {
 	height: 100%;
+}
+
+.header-left {
+	border-radius: 0 0 0 2rem;
 }
 
 a#skip-nav, a#credits {
@@ -80,7 +82,7 @@ nav > ul {
 	height: 100%;
 	list-style-type: none;
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	margin: 0;
 	padding: 0;
 }
@@ -101,6 +103,51 @@ a:hover > .nav-item, a:focus > .nav-item {
 
 li#current {
 	background-color: #33032a;
+}
+
+#dropdown {
+	position: relative;
+}
+
+#dropdown-button, #curseforge, #modrinth, #github {
+	position: absolute;
+	left: 20px;
+	height: var(--header-height);
+	width: 10vw;
+	border: 0;
+	transition: background-color 100ms ease-in;
+	background-color: #ab25a0;
+	color: white
+}
+
+#curseforge {
+	top: 60px;
+}
+
+#modrinth {
+	top: 120px;
+}
+
+button:hover, button:focus {
+	background-color: #792182 !important;
+}
+
+#dropdown-button {
+	border-radius: 1em;
+}
+
+.toggled {
+	border-radius: 1em 1em 0 0 !important;
+}
+
+#github {
+	top: 180px;
+	border-radius: 0 0 1em 1em;
+}
+
+#dropdown-links {
+	display: grid;
+	grid-column: 1;
 }
 
 main {
@@ -266,6 +313,10 @@ a:hover > .social-item, a:focus > .social-item {
 
 	.nav-item {
 		width: 20vw;
+	}
+
+	#dropdown-button, #curseforge, #modrinth, #github {
+		width: 20vw !important;
 	}
 
 	.header-left {
