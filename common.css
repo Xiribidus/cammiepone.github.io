@@ -218,8 +218,11 @@ a:focus .card, a:hover .card {
 	line-height: 1.5;
 }
 
+#post-body {
+	columns: 2;
+}
+
 #about-me {
-	text-align: justify;
 	padding: 50px;
 	margin: 0 10rem;
 	background-color: #343434;
@@ -284,6 +287,10 @@ a:hover > .social-item, a:focus > .social-item {
 		width: 15vw;
 	}
 
+	#post-body {
+		columns: 1;
+	}
+
 	.social-item {
 		width: 12vw;
 	}
@@ -317,6 +324,10 @@ a:hover > .social-item, a:focus > .social-item {
 
 	.post {
 		margin: 0 1rem;
+	}
+
+	#post-body {
+		columns: 1;
 	}
 
 	#about-me {
