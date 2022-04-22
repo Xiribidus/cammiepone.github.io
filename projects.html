@@ -34,7 +34,7 @@
 
 				<ul>
 					<li>
-						<a href="./index.html">
+						<a href="./index.html" class="header-left">
 							<div class="nav-item header-left">Home</div>
 						</a>
 					</li>
@@ -44,7 +44,9 @@
 						</a>
 					</li>
 					<li id="current">
-						<div class="nav-item">Projects</div>
+						<a href="./projects.html">
+							<div class="nav-item">Projects</div>
+						</a>
 					</li>
 					<li>
 						<a href="./blog_posts.html">
@@ -61,21 +63,18 @@
 		</header>
 		
 		<main id="main-content">
-			<div id="dropdown">
-				<button id="dropdown-button" onclick="dropdown()">CurseForge</button>
-				<div id="dropdown-links">
-					<button id="curseforge" onclick="curseforge()" hidden>CurseForge</button>
-					<button id="modrinth" onclick="modrinth()" hidden>Modrinth</button>
-					<button id="github" onclick="github()" hidden>GitHub</button>
-				</div>
-			</div>
-			
 			<div id="page-intro">
 				<h1><u>Projects</u></h1>
 				<p>
 					Welcome to the Project page! You can find all of my released projects<br>
 					listed here!
 				</p>
+			</div>
+
+			<div id="link-buttons">
+				<button id="curseforge" onclick="curseforge()" disabled>CurseForge</button>
+				<button id="modrinth" onclick="modrinth()">Modrinth</button>
+				<button id="github" onclick="github()">GitHub</button>
 			</div>
 
 			<div id="flex-cards">
@@ -177,25 +176,10 @@
 
 		<script>
 			var links = document.getElementsByClassName("card-links");
-			var dropdownButton = document.getElementById("dropdown-button");
-
-			function dropdown() {
-				document.getElementById("curseforge").toggleAttribute("hidden");
-				document.getElementById("modrinth").toggleAttribute("hidden");
-				document.getElementById("github").toggleAttribute("hidden");
-				
-				if(!dropdownButton.classList.contains("toggled"))
-					dropdownButton.classList.add("toggled");
-				else
-					dropdownButton.classList.remove("toggled");
-			}
 
 			function curseforge() {
-				dropdownButton.textContent = "CurseForge";
-				dropdownButton.classList.remove("toggled");
-
 				for(var i = 0; i < links.length; i++) {
-					var link = links[i].href;
+					var link = links[i];
 
 					if(link.href.includes("arcanus"))
 						link.href = "https://www.curseforge.com/minecraft/mc-mods/arcanus";
@@ -216,12 +200,13 @@
 					if(link.href.includes("vehicle-fix"))
 						link.href = "https://www.curseforge.com/minecraft/mc-mods/vehiclefix";
 				}
+
+				document.querySelector("#curseforge").disabled = true;
+				document.querySelector("#modrinth").disabled = false;
+				document.querySelector("#github").disabled = false;
 			}
 
 			function modrinth() {
-				dropdownButton.textContent = "Modrinth";
-				dropdownButton.classList.remove("toggled");
-
 				for(var i = 0; i < links.length; i++) {
 					var link = links[i];
 
@@ -242,12 +227,13 @@
 					if(link.href.includes("the-box-trot"))
 						link.href = "https://modrinth.com/mod/the-box-trot";
 				}
+
+				document.querySelector("#curseforge").disabled = false;
+				document.querySelector("#modrinth").disabled = true;
+				document.querySelector("#github").disabled = false;
 			}
 
 			function github() {
-				dropdownButton.textContent = "GitHub";
-				dropdownButton.classList.remove("toggled");
-
 				for(var i = 0; i < links.length; i++) {
 					var link = links[i];
 
@@ -270,23 +256,10 @@
 					if(link.href.includes("vehiclefix"))
 						link.href = "https://github.com/CammiePone/vehiclefix";
 				}
-			}
 
-			window.onclick = function(event) {
-				if(!event.target.matches("#dropdown-button")) {
-					var curseforge = document.getElementById("curseforge");
-					var modrinth = document.getElementById("modrinth");
-					var github = document.getElementById("github");
-
-					if(!curseforge.hidden)
-						curseforge.toggleAttribute("hidden");
-					if(!modrinth.hidden)
-						modrinth.toggleAttribute("hidden");
-					if(!github.hidden)
-						github.toggleAttribute("hidden");
-					
-					dropdownButton.classList.remove("toggled");
-				}
+				document.querySelector("#curseforge").disabled = false;
+				document.querySelector("#modrinth").disabled = false;
+				document.querySelector("#github").disabled = true;
 			}
 		</script>
 	</body>
