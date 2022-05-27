@@ -362,3 +362,8 @@ a:hover > .social-item, a:focus > .social-item {
 		border-radius: 0 2rem 0 0;
 	}
 }
+
+.centerimg {
+	margin: auto;
+	width: 50%;
+}	
